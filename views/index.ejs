@@ -5,7 +5,17 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <h1>Welcome to <%= title %>!</h1>
+    <p>The site that lets you replace sensitive text of your choosing with the letter X.</p><br>
+    <p>In the box below, enter the words you wish to be redacted, separated by a space:</p>
+    <form method="post">
+      <label for="words"></label>
+      <input type="text" id="words"name="words" placeholder="apples oranges"><br>
+      <p>Now enter your source text below which you'd like to be redacted and click Submit when ready:</p>
+      <label for="source-text"></label>
+      <textarea name="name" rows="8" cols="80" value="apples oranges"></textarea><br>
+      <input type="submit" value="Submit">
+      <p>Your redacted text:</p>
+    </form>
   </body>
 </html>
