@@ -11,5 +11,9 @@
         "ecmaVersion": 12
     },
     "rules": {
-    }
+    },
+    "plugins": [
+        "ejs",
+        "html"
+      ]
 }
