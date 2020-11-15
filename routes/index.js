@@ -1,5 +1,7 @@
+// import replacer from '../substitute'
+
 const express = require('express');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
@@ -12,8 +14,10 @@ router.get('/', (req, res, next) => {
   });
 });
 
-router.post('/', urlencodedParser, function (req, res) {
-  console.log('this is the body: ', + req.body)
+router.post('/', urlencodedParser, (req, res) => {
+  // replacer(req);
+// }, function(req)
+  // return res.redirect('/results')
 });
 
 module.exports = router;
