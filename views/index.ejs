@@ -3,21 +3,55 @@
   <head>
     <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- <script type="text/javascript" src="../scripts.js"> -->
   </head>
+
+
+
   <body>
     <h1>Welcome to <%= title %>!</h1>
     <p>The site that lets you replace sensitive text of your choosing with the letter X.</p><br>
     <p>In the box below, enter the words you wish to be redacted, separated by a space:</p>
 
-    <form method="post">
-      <label for="words"></label>
-      <input type="text" id="words"name="words" placeholder="apples oranges"><br>
-      <p>Now enter your source text below which you'd like to be redacted and click Submit when ready:</p>
-      <label for="source-text"></label>
-      <textarea name="source-text" rows="8" cols="80" value="apples oranges"></textarea><br>
-      <input type="submit" value="Submit">
-      <p>Your redacted text:</p>
-    </form>
+    <label for="words"></label>
+    <input type="text" id="words"name="words" ><br>
+
+    </br><p>Now enter your source text below which you'd like to be redacted and click Submit when ready:</p>
+
+    <label for="source-text"></label>
+    <textarea id="source-text" name="source-text" rows="8" cols="80" value="apples oranges"></textarea><br>
+
+    <button id="submit" type="button"> Submit</button>
+    <p>Your redacted text:</p>
+    <div id="space"></div>
+
+    <script>
+      document.getElementById("submit").addEventListener("click", replacer)
+
+      function replacer() {
+        let words = (document.getElementById("words")).value;
+        let sourceText = document.getElementById("source-text").value;
+        let outputText = ""
+
+        splitInput = words.match(/\w+|"[^"]+"/g);
+        console.log(splitInput)
+        splitInput.forEach((x, y) => {
+          console.log(x)
+          console.log(y)
+          splitInput[y] = x.split('"').join('')
+        });
+
+        splitInput.forEach((x) => {
+          outputText = sourceText.split(x).join('XXXX')
+        })
+        var output = document.createElement('p');
+        output.innerHTML = outputText
+        var element = document.getElementById("space");
+        element.appendChild(output);
+      }
+
+    </script>
 
   </body>
+
 </html>
