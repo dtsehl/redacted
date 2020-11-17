@@ -36,3 +36,12 @@ I could not come up with a testing framework that would work, so I even tried Do
 This did not work. Among things I learned was how testing frameworks actually do their job: they use a browser to navigate to a website and manipulate it. Without installing a browser (such as Firefox or Chrome) inside of the Docker container, the test could not do its job.
 
 In the case of Capybara, it is able to test Javascript by using the Selenium Webdriver instead of its default Rack.
+
+### Future Enhancements
+- Properly abstract away code from the view
+- Make a way to clear the redacted text from the webpage, perhaps with a button
+- Randomize the number of 'X's that text is replaced with
+- Hook up a Database and allow the user to upload a document that would then be parsed through
+- Add Users so they could keep track of what documents they've redacted and keyowrds
+    - In that same token, analysis of what keywords are used the most could be useful, if stored in a persistent database
+    - This would also necessitate additional security concerns, not only because having Users requires password storage considerations (or the use of something like OAuth 2) but also because the text and keywords would be sensitive
