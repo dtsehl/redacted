@@ -34,18 +34,17 @@
         let outputText = ""
 
         splitInput = words.match(/\w+|"[^"]+"/g);
-        console.log(splitInput)
+
         splitInput.forEach((x, y) => {
-          console.log(x)
-          console.log(y)
           splitInput[y] = x.split('"').join('')
         });
 
         splitInput.forEach((x) => {
-          outputText = sourceText.split(x).join('XXXX')
+          sourceText = sourceText.split(x).join('XXXX')
         })
+
         var output = document.createElement('p');
-        output.innerHTML = outputText
+        output.innerHTML = sourceText
         var element = document.getElementById("space");
         element.appendChild(output);
       }
