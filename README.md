@@ -3,7 +3,7 @@ This is a tech challenge to build a webapp that allows a user to redact text.
 
 The user designates keywords they'd like to be redacted, and source text that the redaction would take place on. Then, when clicking on the Submit button on the webpage the source text would be returned with the letters XXXX replacing the keywords originally designated.
 
-Uses:
+### Tools:
 - Node 14.15.0
 - Express 4.16.1
 
@@ -17,8 +17,11 @@ Struggles:
 
 ### Instructions
 `git clone https://github.com/dtsehl/redacted.git`
+
 `npm install`
+
 `npm start`
+
 Then browse to localhost:3000, or view the page live [here](https://redacted-node.herokuapp.com/)
 
 ### [Wireframe Link](https://miro.com/app/board/o9J_lfe9p7k=/)
